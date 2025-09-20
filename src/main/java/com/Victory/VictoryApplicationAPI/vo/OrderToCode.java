@@ -23,5 +23,11 @@ public class OrderToCode {
     @TableField("规格")
     private String Specification;
 
+    @TableField("销售单号")
+    private String SaleOrder;
+
+    @TableField("销售订单行号")
+    private String SOLineNumber;
+
 
 }

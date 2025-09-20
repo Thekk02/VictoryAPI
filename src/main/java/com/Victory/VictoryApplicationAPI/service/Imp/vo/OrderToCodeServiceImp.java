@@ -50,4 +50,17 @@ public class OrderToCodeServiceImp extends ServiceImpl<OrderToCodeMapper,OrderTo
         }
         return specificationList;
     }
+
+    @Override
+    public String getSOAndLineNumber(String cardNumber) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("卡号",cardNumber);
+        System.out.println(cardNumber);
+        System.out.println(queryWrapper.getSqlSegment());
+        List<OrderToCode> orderToCodes = orderToCodeMapper.selectList(queryWrapper);
+        System.out.println("本批有效图列表的长度是" + orderToCodes.size());
+        StringBuilder res = new StringBuilder();
+        res.append(orderToCodes.get(0).getSaleOrder()).append("-").append(orderToCodes.get(0).getSOLineNumber());
+        return res.toString();
+    }
 }

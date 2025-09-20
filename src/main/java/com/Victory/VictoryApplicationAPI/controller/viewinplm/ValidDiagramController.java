@@ -4,6 +4,7 @@ import com.Victory.VictoryApplicationAPI.annotation.MyLog;
 import com.Victory.VictoryApplicationAPI.entity.viewinplm.CustomerOriginalPicture;
 import com.Victory.VictoryApplicationAPI.entity.viewinplm.ValidDiagram;
 import com.Victory.VictoryApplicationAPI.service.viewinplm.ValidDiagramService;
+import com.Victory.VictoryApplicationAPI.service.vo.OrderToCodeService;
 import com.Victory.VictoryApplicationAPI.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -27,6 +28,9 @@ public class ValidDiagramController {
     @Autowired
     private ValidDiagramService validDiagramService;
 
+    @Autowired
+    private OrderToCodeService orderToCodeService;
+
 
     @ApiOperation("输入名称获取本批有效图列表")
     @GetMapping("/getlistbyname")
@@ -34,5 +38,16 @@ public class ValidDiagramController {
     @ResponseBody
     public Result<List<ValidDiagram>> getbyName(String name){
         return Result.ok(validDiagramService.getListByname(name));
+    }
+
+
+    @ApiOperation("输入卡号获取本批有效图列表")
+    @GetMapping("/getlistbycardnumber")
+    @MyLog(title = "plm看图模块",content = "根据卡号查询本批有效图")
+    @ResponseBody
+    public Result<List<ValidDiagram>> getbyCardNumber(String cardNumber){
+        System.out.println(cardNumber);
+        System.out.println(orderToCodeService.getSOAndLineNumber(cardNumber));
+        return Result.ok(validDiagramService.getListByname(orderToCodeService.getSOAndLineNumber(cardNumber)));
     }
 }

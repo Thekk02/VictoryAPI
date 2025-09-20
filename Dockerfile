@@ -20,7 +20,7 @@ EXPOSE 8080
 #ARG JAR_FILE
 #应用构建成功后的jar文件被复制到镜像内
 #ADD ${JAR_FILE} demo.jar
-ADD target/VictoryApplicationAPI-1.0.28.jar app.jar
+ADD target/victory-2.0.1.jar app.jar
 
 #touch命令的作用是修改这个文件的访问时间和修改时间为当前时间，而不会修改文件的内容。
 #RUN bash -c 'touch /demo.jar'

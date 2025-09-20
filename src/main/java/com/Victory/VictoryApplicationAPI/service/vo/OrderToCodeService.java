@@ -17,5 +17,7 @@ public interface OrderToCodeService extends IService<OrderToCode> {
     //通过图号获取对应规格列表
     List<String> getSpecificationList(String FigureNumber);
 
+    //根据卡号，获取订单号-销售订单行号
+    String getSOAndLineNumber(String cardNumber);
 
 }
