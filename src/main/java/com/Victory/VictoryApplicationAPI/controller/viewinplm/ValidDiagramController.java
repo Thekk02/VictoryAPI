@@ -48,6 +48,7 @@ public class ValidDiagramController {
     public Result<List<ValidDiagram>> getbyCardNumber(String cardNumber){
         System.out.println(cardNumber);
         System.out.println(orderToCodeService.getSOAndLineNumber(cardNumber));
-        return Result.ok(validDiagramService.getListByname(orderToCodeService.getSOAndLineNumber(cardNumber)));
+        //return Result.ok(validDiagramService.getListByname(orderToCodeService.getSOAndLineNumber(cardNumber)));
+        return Result.ok(validDiagramService.getListBynames(orderToCodeService.getNamesByCardNumber(cardNumber)));
     }
 }

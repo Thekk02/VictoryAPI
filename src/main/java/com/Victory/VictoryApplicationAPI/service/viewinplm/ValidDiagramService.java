@@ -13,4 +13,6 @@ import java.util.List;
 public interface ValidDiagramService extends IService<ValidDiagram> {
 
     List<ValidDiagram> getListByname(String name);
+
+    List<ValidDiagram> getListBynames(List<String> names);
 }

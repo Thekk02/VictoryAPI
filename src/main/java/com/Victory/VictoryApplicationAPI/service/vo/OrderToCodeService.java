@@ -20,4 +20,7 @@ public interface OrderToCodeService extends IService<OrderToCode> {
     //根据卡号，获取订单号-销售订单行号
     String getSOAndLineNumber(String cardNumber);
 
+    //根据卡号获取订单号-销售订单号和存货编码
+    List<String> getNamesByCardNumber(String cardNumber);
+
 }

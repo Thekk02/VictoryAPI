@@ -1,4 +1,4 @@
-package com.Victory.VictoryApplicationAPI.mapper.vomapper;
+package com.Victory.VictoryApplicationAPI.mapper.viewinplm.vomapper;
 
 import com.Victory.VictoryApplicationAPI.vo.MesReportData;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;

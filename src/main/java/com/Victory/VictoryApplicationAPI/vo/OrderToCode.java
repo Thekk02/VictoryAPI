@@ -29,5 +29,7 @@ public class OrderToCode {
     @TableField("销售订单行号")
     private String SOLineNumber;
 
+    @TableField("存货编码")
+    private String InventoryCode;
 
 }

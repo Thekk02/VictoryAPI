@@ -1,6 +1,6 @@
 package com.Victory.VictoryApplicationAPI.service.Imp.vo;
 
-import com.Victory.VictoryApplicationAPI.mapper.vomapper.OrderToCodeMapper;
+import com.Victory.VictoryApplicationAPI.mapper.viewinplm.vomapper.OrderToCodeMapper;
 import com.Victory.VictoryApplicationAPI.service.vo.OrderToCodeService;
 import com.Victory.VictoryApplicationAPI.vo.OrderToCode;
 import com.baomidou.dynamic.datasource.annotation.DS;
@@ -60,7 +60,22 @@ public class OrderToCodeServiceImp extends ServiceImpl<OrderToCodeMapper,OrderTo
         List<OrderToCode> orderToCodes = orderToCodeMapper.selectList(queryWrapper);
         System.out.println("本批有效图列表的长度是" + orderToCodes.size());
         StringBuilder res = new StringBuilder();
-        res.append(orderToCodes.get(0).getSaleOrder()).append("-").append(orderToCodes.get(0).getSOLineNumber());
+        res.append(orderToCodes.get(0).getSaleOrder()).append("-").append(orderToCodes.get(0).getSOLineNumber()).append("-").append(orderToCodes.get(0).getInventoryCode());
         return res.toString();
+    }
+
+    @Override
+    public List<String> getNamesByCardNumber(String cardNumber) {
+        QueryWrapper queryWrapper = new QueryWrapper();
+        queryWrapper.eq("卡号",cardNumber);
+        System.out.println(cardNumber);
+        System.out.println(queryWrapper.getSqlSegment());
+        List<OrderToCode> orderToCodes = orderToCodeMapper.selectList(queryWrapper);
+        System.out.println("本批有效图列表的长度是" + orderToCodes.size());
+
+        List<String> names = new ArrayList<>();
+        names.add(orderToCodes.get(0).getSaleOrder() + "-" + orderToCodes.get(0).getSOLineNumber() + "-");
+        names.add(orderToCodes.get(0).getInventoryCode());
+        return names;
     }
 }

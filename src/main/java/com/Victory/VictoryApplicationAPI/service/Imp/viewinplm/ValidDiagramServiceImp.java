@@ -28,6 +28,22 @@ public class ValidDiagramServiceImp extends ServiceImpl<ValidDiagramMapper, Vali
         QueryWrapper<ValidDiagram> queryWrapper = new QueryWrapper<>();
         //log.warn(name);
         queryWrapper.like("名字",name);
+        queryWrapper.orderByDesc("名字");
+        //log.warn(queryWrapper.getSqlSegment());
+        List<ValidDiagram> list = validDiagramMapper.selectList(queryWrapper);
+        log.warn("本批有效图查询");
+        //log.warn(list.toString());
+        //log.warn(list.size() + "");
+        return list;
+    }
+
+    @Override
+    public List<ValidDiagram> getListBynames(List<String> names) {
+        QueryWrapper<ValidDiagram> queryWrapper = new QueryWrapper<>();
+        //log.warn(name);
+        queryWrapper.like("名字",names.get(0));
+
+        queryWrapper.like("名字",names.get(1));
         //log.warn(queryWrapper.getSqlSegment());
         List<ValidDiagram> list = validDiagramMapper.selectList(queryWrapper);
         log.warn("本批有效图查询");

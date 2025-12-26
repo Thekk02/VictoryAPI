@@ -1,6 +1,6 @@
 package com.Victory.VictoryApplicationAPI.service.Imp.vo;
 
-import com.Victory.VictoryApplicationAPI.mapper.vomapper.MesReportDataMapper;
+import com.Victory.VictoryApplicationAPI.mapper.viewinplm.vomapper.MesReportDataMapper;
 import com.Victory.VictoryApplicationAPI.service.vo.MesReportDataService;
 import com.Victory.VictoryApplicationAPI.vo.MesReportData;
 import com.baomidou.dynamic.datasource.annotation.DS;

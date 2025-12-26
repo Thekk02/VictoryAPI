@@ -35,6 +35,11 @@ spring:
           url: jdbc:sqlserver://192.168.1.81:1433;DataBase=U9C;encrypt=true;trustServerCertificate=true
           username: sa
           password: W5kZd#rE
+        db5: #301数据库
+          driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+          url: jdbc:sqlserver://10.0.16.4:1433;DataBase=UFDATA_301_2020;encrypt=true;trustServerCertificate=true
+          username: sa
+          password: Wx@u8$^*
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

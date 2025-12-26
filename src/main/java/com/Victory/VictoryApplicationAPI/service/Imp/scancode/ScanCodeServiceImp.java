@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author kk
@@ -21,6 +22,7 @@ public class ScanCodeServiceImp extends ServiceImpl<ScanCodeMapper, ScanCode> im
     private ScanCodeMapper scanCodeMapper;
 
 
+    @Transactional
     public boolean InsertRecording(ScanCode scanCode){
         if(this.exist(scanCode)){
             return false;

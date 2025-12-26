@@ -1,6 +1,6 @@
 package com.Victory.VictoryApplicationAPI.service.Imp.vo;
 
-import com.Victory.VictoryApplicationAPI.mapper.vomapper.ArticleToSpecificationMapper;
+import com.Victory.VictoryApplicationAPI.mapper.viewinplm.vomapper.ArticleToSpecificationMapper;
 import com.Victory.VictoryApplicationAPI.service.vo.ArticleToSpecificationService;
 import com.Victory.VictoryApplicationAPI.vo.ArticleToSpecification;
 import com.baomidou.dynamic.datasource.annotation.DS;
